@@ -1,10 +1,10 @@
 package com.spring.web;
 
+import com.spring.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * Created by chuan on 2017-9-21.
@@ -13,10 +13,10 @@ import org.springframework.web.client.RestTemplate;
 public class ConsumerController {
 
     @Autowired
-    RestTemplate restTemplate;
+    private HelloService helloService;
 
     @RequestMapping(value="/ribbon-consumer", method= RequestMethod.GET)
     public String helloConsumer() {
-        return restTemplate.getForEntity("http://HELLO-SERVICE/hello", String.class).getBody();
+        return helloService.hello();
     }
 }

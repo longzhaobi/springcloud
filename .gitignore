@@ -142,3 +142,5 @@ logs/
 # IntelliJ IDEA
 *.iml
 .idea/
+/eureka-server/target
+/eureka-server-ha/target
