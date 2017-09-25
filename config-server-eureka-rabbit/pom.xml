@@ -5,10 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.spring</groupId>
-    <artifactId>config-server</artifactId>
+    <artifactId>config-server-eureka-rabbit</artifactId>
     <version>1.0</version>
-
-    <name>config-server</name>
+    <name>config-server-eureka-rabbit</name>
     <description>Spring Cloud project</description>
 
     <parent>
@@ -28,10 +27,13 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
     </dependencies>
 
@@ -55,7 +57,5 @@
             </plugin>
         </plugins>
     </build>
-
-
 
 </project>
